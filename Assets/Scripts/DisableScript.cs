@@ -4,17 +4,6 @@ using UnityEngine;
 
 public class DisableScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     public IEnumerator Disablescript(GameObject TypeOfAttack)
     {
         TypeOfAttack.SetActive(true);
@@ -22,6 +11,5 @@ public class DisableScript : MonoBehaviour
         yield return new WaitForSeconds(TypeOfAttack.GetComponent<AttackStats>().TimeToRecharge);
         TypeOfAttack.SetActive(false);
         gameObject.GetComponent<AttackCode>().enabled = true;
-        
     }
 }

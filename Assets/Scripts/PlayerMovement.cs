@@ -8,7 +8,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Animator animator = default;
     [SerializeField] private float _xvalue = default;
     [SerializeField] private float _speed = default;
-    
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody>();
@@ -24,6 +23,7 @@ public class PlayerMovement : MonoBehaviour
     private void Movement()
     {
         _rigidbody.velocity = new Vector3(-_xvalue * _speed, 0, 0);
+        float Velocity = Mathf.FloorToInt(_xvalue);
         animator.SetInteger("Velocidad", Mathf.FloorToInt(_xvalue));
     }
 }
